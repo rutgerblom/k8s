@@ -1,13 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  creationTimestamp: "2019-12-24T22:41:45Z"
   name: wp
-  resourceVersion: "290502"
-  selfLink: /api/v1/namespaces/wp
-  uid: abef82fc-5199-43f2-b12d-eb0394456fd1
 spec:
   finalizers:
   - kubernetes
-status:
-  phase: Active
