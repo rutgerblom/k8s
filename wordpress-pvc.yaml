@@ -1,0 +1,72 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app":"wordpress"},"name":"mysql-pv-claim","namespace":"demons"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"2Gi"}},"storageClassName":"local-storage"}}
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: "2019-12-23T13:25:16Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: wordpress
+    name: mysql-pv-claim
+    namespace: demons
+    resourceVersion: "96775"
+    selfLink: /api/v1/namespaces/demons/persistentvolumeclaims/mysql-pv-claim
+    uid: 2c1134c8-cadf-4941-9818-5f5f4eae641a
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 2Gi
+    storageClassName: local-storage
+    volumeMode: Filesystem
+    volumeName: pv01
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 5Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app":"wordpress"},"name":"wp-pv-claim","namespace":"demons"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"2Gi"}},"storageClassName":"local-storage"}}
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: "2019-12-23T13:25:16Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: wordpress
+    name: wp-pv-claim
+    namespace: demons
+    resourceVersion: "96772"
+    selfLink: /api/v1/namespaces/demons/persistentvolumeclaims/wp-pv-claim
+    uid: 58d032ba-3c4e-492e-bef1-901dff637dc5
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 2Gi
+    storageClassName: local-storage
+    volumeMode: Filesystem
+    volumeName: pv02
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 5Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
