@@ -14,7 +14,7 @@ items:
     labels:
       app: wordpress
     name: mysql-pv-claim
-    namespace: demons
+    namespace: wp
     resourceVersion: "96775"
     selfLink: /api/v1/namespaces/demons/persistentvolumeclaims/mysql-pv-claim
     uid: 2c1134c8-cadf-4941-9818-5f5f4eae641a
@@ -47,7 +47,7 @@ items:
     labels:
       app: wordpress
     name: wp-pv-claim
-    namespace: demons
+    namespace: wp
     resourceVersion: "96772"
     selfLink: /api/v1/namespaces/demons/persistentvolumeclaims/wp-pv-claim
     uid: 58d032ba-3c4e-492e-bef1-901dff637dc5
