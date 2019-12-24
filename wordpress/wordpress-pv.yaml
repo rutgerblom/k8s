@@ -1,6 +1,4 @@
 apiVersion: v1
-items:
-- apiVersion: v1
   kind: PersistentVolume
   metadata:
     labels:
@@ -21,7 +19,8 @@ items:
     persistentVolumeReclaimPolicy: Retain
     storageClassName: local-storage
     volumeMode: Filesystem
-- apiVersion: v1
+------
+apiVersion: v1
   kind: PersistentVolume
   metadata:
     labels:
