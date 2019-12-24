@@ -25,7 +25,7 @@ items:
       apiVersion: v1
       kind: PersistentVolumeClaim
       name: mysql-pv-claim
-      namespace: demons
+      namespace: wp
       resourceVersion: "96751"
       uid: 2c1134c8-cadf-4941-9818-5f5f4eae641a
     hostPath:
@@ -61,7 +61,7 @@ items:
       apiVersion: v1
       kind: PersistentVolumeClaim
       name: wp-pv-claim
-      namespace: demons
+      namespace: wp
       resourceVersion: "96761"
       uid: 58d032ba-3c4e-492e-bef1-901dff637dc5
     hostPath:
