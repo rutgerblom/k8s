@@ -1,6 +1,10 @@
 apiVersion: v1
+items:
+- apiVersion: v1
   kind: PersistentVolume
   metadata:
+    finalizers:
+    - kubernetes.io/pv-protection
     labels:
       type: local
     name: pv01
@@ -9,19 +13,17 @@ apiVersion: v1
     - ReadWriteOnce
     capacity:
       storage: 5Gi
-    claimRef:
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      name: mysql-pv-claim
     hostPath:
       path: /mnt/pv01
       type: ""
     persistentVolumeReclaimPolicy: Retain
     storageClassName: local-storage
     volumeMode: Filesystem
-apiVersion: v1
+- apiVersion: v1
   kind: PersistentVolume
   metadata:
+    finalizers:
+    - kubernetes.io/pv-protection
     labels:
       type: local
     name: pv02
@@ -30,13 +32,14 @@ apiVersion: v1
     - ReadWriteOnce
     capacity:
       storage: 5Gi
-    claimRef:
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      name: wp-pv-claim
     hostPath:
       path: /mnt/pv02
       type: ""
     persistentVolumeReclaimPolicy: Retain
     storageClassName: local-storage
     volumeMode: Filesystem
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
+

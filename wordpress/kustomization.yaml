@@ -8,6 +8,5 @@ secretGenerator:
 
 resources:
 - wordpress-pv.yaml
-- wordpress-pvc.yaml
 - mysql-deployment.yaml
 - wordpress-deployment.yaml
