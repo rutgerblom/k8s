@@ -1,4 +1,4 @@
-Steps to get this containerized WordPress uo & running:
+Steps to get this containerized WordPress up & running:
 
 1 - Create namespace "wp" (kubectl apply -f wordpress-namespace.yaml)
 
