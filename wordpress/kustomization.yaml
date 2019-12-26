@@ -7,6 +7,6 @@ secretGenerator:
   - password=VMware1!
 
 resources:
-- wordpress-pv.yaml
+- pv.yaml
 - mysql-deployment.yaml
 - wordpress-deployment.yaml
