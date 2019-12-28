@@ -379,10 +379,7 @@ data:
     # Set NSX API adaptor to NSX Policy API adaptor. If unset, NSX adaptor will
     # be set to the NSX Manager based adaptor.
     policy_nsxapi = True
-    single_tier_topology = True
-    tier0_gateway = T0
-
-
+    
     # Path to NSX client certificate file. If specified, the nsx_api_user and
     # nsx_api_password options will be ignored. Must be specified along with
     # nsx_api_private_key_file option
@@ -399,7 +396,7 @@ data:
     # If
     # scheme is not provided https is used. If port is not provided port 80 is
     # used for http and port 443 for https.
-    nsx_api_managers = 10.2.129.11
+    nsx_api_managers = nsxmanager.demo.local
     nsx_api_user = admin
     nsx_api_password = VMware1!VMware1!
 
@@ -496,20 +493,17 @@ data:
     # Choices: <None> source_ip
     #l4_persistence = <None>
 
-
-
-
     # Name or UUID of the container ip blocks that will be used for creating
     # subnets. If name, it must be unique. If policy_nsxapi is enabled, it also
     # support automatically creating the IP blocks. The definition is a comma
     # separated list: CIDR,CIDR,... Mixing different formats (e.g. UUID,CIDR)
     # is not supported.
-    container_ip_blocks = K8S-POD-IP-BLOCK
+    container_ip_blocks = k8s-pod-ip-block
 
     # Name or UUID of the container ip blocks that will be used for creating
     # subnets for no-SNAT projects. If specified, no-SNAT projects will use
     # these ip blocks ONLY. Otherwise they will use container_ip_blocks
-    no_snat_ip_blocks = K8S-NOSNAT-IP-BLOCK
+    no_snat_ip_blocks = k8s-nosnat-ip-block
 
     # Name or UUID of the external ip pools that will be used for allocating IP
     # addresses which will be used for translating container IPs via SNAT
@@ -517,16 +511,17 @@ data:
     # creating the ip pools. The definition is a comma separated list:
     # CIDR,IP_1-IP_2,... Mixing different formats (e.g. UUID, CIDR&IP_Range) is
     # not supported.
-    external_ip_pools = K8S-NAT-POOL
+    external_ip_pools = k8s-nat-pool
 
 
     # Name or UUID of the top-tier router for the container cluster network,
     # which could be either tier0 or tier1. If policy_nsxapi is enabled, should
     # be ID of a tier0/tier1 gateway.
     #top_tier_router = <None>
+    tier0_gateway = T0
 
     # Option to use single-tier router for the container cluster network
-    #single_tier_topology = False
+    single_tier_topology = True
 
     # Name or UUID of the external ip pools that will be used only for
     # allocating IP addresses for Ingress controller and LB service. If
@@ -561,18 +556,16 @@ data:
 
     # Name or UUID of the firewall section that will be used to create firewall
     # sections below this mark section
-    top_firewall_section_marker = a00a66e0-2502-11ea-829f-0b3ef8ec48b9
+    top_firewall_section_marker = k8s-begin
 
     # Name or UUID of the firewall section that will be used to create firewall
     # sections above this mark section
-    bottom_firewall_section_marker = a24cdcd0-2502-11ea-829f-0b3ef8ec48b9
+    bottom_firewall_section_marker = k8s-end
 
     # Replication mode of container logical switch, set SOURCE for cloud as it
     # only supports head replication mode
     # Choices: MTEP SOURCE
     #ls_replication_mode = MTEP
-
-
 
     # The resource which NCP will search tag 'node_name' on, to get parent VIF
     # or transport node uuid for container LSP API context field. For HOSTVM
@@ -586,7 +579,6 @@ data:
     # to pod_resource_key. In WCP mode, pod_uid is used.
     # Choices: pod_resource_key pod_uid
     #vif_app_id_type = pod_resource_key
-
 
     # If this value is not empty, NCP will append it to nameserver list
     #dns_servers = []
