@@ -1,5 +1,3 @@
-
-
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -528,7 +526,7 @@ data:
     # policy_nsxapi is enabled, it also supports automatically creating the ip
     # pools. The definition is a comma separated list: CIDR,IP_1-IP_2,...
     # Mixing different formats (e.g. UUID, CIDR&IP_Range) is not supported.
-    external_ip_pools_lb = K8S-LB-POOL
+    external_ip_pools_lb = k8s-lb-pool
 
     # Name or UUID of the NSX overlay transport zone that will be used for
     # creating logical switches for container networking. It must refer to an
@@ -593,11 +591,6 @@ data:
     # Edge cluster ID needed when creating Tier1 router for loadbalancer
     # service. Information could be retrieved from Tier0 router
     #edge_cluster = <None>
-
-
-
-
-
 
     [ha]
 
