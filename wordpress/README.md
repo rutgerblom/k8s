@@ -4,6 +4,6 @@ Steps to get this containerized WordPress up running:
 
 2 - Create directory /mnt/pv01 and /mnt/pv02 on each K8s worker node
 
-3 - Create namespace "wp" (kubectl apply -f wordpress-namespace.yaml)
+3 - Create namespace "wp" (kubectl apply -f namespace.yaml)
 
 4 - Deploy WordPress (kubectl apply -k ./ -n wp)
