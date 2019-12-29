@@ -1,4 +1,4 @@
-Steps to get this containerized WordPress up & running:
+Steps to get this containerized WordPress up running:
 
 1 - Copy the yaml files to a directory on the K8s master node
 
