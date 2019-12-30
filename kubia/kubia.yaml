@@ -4,8 +4,10 @@ metadata:
   name: kube-manual
 spec:
   containers:
-    image: rutgerblom/kubia
+  - image: rutgerblom/kubia
+    imagePullPolicy: Always
     name: kubia
     ports:
-      containerPort: 8080
+    - containerPort: 8080
       protocol: TCP
+
