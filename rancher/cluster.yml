@@ -17,3 +17,5 @@ nodes:
       ssh_key_path: /home/serbl/.ssh/id_rsa
 kubernetes_version: v1.16.6-rancher1-2
 cluster_name: k8s-cluster
+network:
+    plugin: none
