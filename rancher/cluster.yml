@@ -1,15 +1,19 @@
-kubernetes_version: v1.16.6-rancher1-2
 nodes:
     - address: 10.190.22.10
       user: serbl
       role:
         - controlplane
         - etcd
+      ssh_key_path: /home/serbl/.ssh/id_rsa
     - address: 10.190.22.11
       user: serbl
       role:
         - worker
+      ssh_key_path: /home/serbl/.ssh/id_rsa
     - address: 10.190.22.12
       user: serbl
       role:
         - worker
+      ssh_key_path: /home/serbl/.ssh/id_rsa
+kubernetes_version: v1.16.6-rancher1-2
+cluster_name: k8s-cluster
