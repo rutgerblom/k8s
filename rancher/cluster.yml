@@ -1,0 +1,15 @@
+kubernetes_version: v1.16.6-rancher1-2
+nodes:
+    - address: 10.190.22.10
+      user: serbl
+      role:
+        - controlplane
+        - etcd
+    - address: 10.190.22.11
+      user: serbl
+      role:
+        - worker
+    - address: 10.190.22.12
+      user: serbl
+      role:
+        - worker
