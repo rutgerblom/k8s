@@ -19,3 +19,7 @@ kubernetes_version: v1.16.6-rancher1-2
 cluster_name: k8s-cluster
 network:
     plugin: none
+services:
+  kubelet:
+    extra_binds:
+    - "/sbin/apparmor_parser:/sbin/apparmor_parser"
