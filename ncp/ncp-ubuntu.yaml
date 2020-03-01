@@ -532,7 +532,7 @@ data:
     # creating logical switches for container networking. It must refer to an
     # already existing resource on NSX and every transport node where VMs
     # hosting containers are deployed must be enabled on this transport zone
-    overlay_tz = TZ-OVERLAY
+    overlay_tz = c28a7bf7-ccb6-4a16-8950-82273947f0f0
 
     # Name or UUID of the lb service that can be attached by virtual servers
     #lb_service = <None>
