@@ -394,7 +394,7 @@ data:
     # If
     # scheme is not provided https is used. If port is not provided port 80 is
     # used for http and port 443 for https.
-    nsx_api_managers = nsxmanager.demo.local
+    nsx_api_managers = nsxmanager.lab.local
     nsx_api_user = admin
     nsx_api_password = VMware1!VMware1!
 
